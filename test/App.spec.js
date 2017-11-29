@@ -1,6 +1,6 @@
 import { mount } from 'vue-test-utils'
-import App from '../src/components/App.vue'
 import expect from 'expect'
+import App from '../src/components/App.vue'
 
 describe('App', () => {
   it('show Hello Vue text', () => {
