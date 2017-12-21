@@ -12,9 +12,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader'],
+          use: 'css-loader',
           fallback: 'style-loader'
         })
       },
