@@ -12,10 +12,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'stylus-loader'],
+          fallback: 'style-loader'
+        })
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: 'css-loader',
-          fallback: 'style-loader'
+          use: 'css-loader'
         })
       },
       {
@@ -32,6 +38,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader'
       }
     ]
   },
