@@ -3,6 +3,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/app.js',
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
